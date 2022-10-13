@@ -2,7 +2,7 @@
 
 namespace Dominio.Logica.Interface.Repositorio.AgendadorDB
 {
-    public interface IRepositorioUsuario
+    public interface IRepositorioUsuario : IRepositorioBase<Usuario>
     {
         Usuario? ObterUsuarioPorID(int id);
     }

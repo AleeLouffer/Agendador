@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Dados.Logica.Repositorio.AgendadorDB;
+using Dominio.Logica.Interface.Repositorio.AgendadorDB;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace InjecaoDepedencia
 {
@@ -6,7 +8,7 @@ namespace InjecaoDepedencia
     {
         private static void IniciarRepositorios(IServiceCollection services)
         {
-
+            services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
         }
     }
 }
