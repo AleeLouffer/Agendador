@@ -24,7 +24,8 @@ namespace Aplicação.Logica.Aplicacao.ArquiteturaDB
 
         public async Task<Usuario> CadastrarUsuario(CadastroUsuarioViewModel usuarioViewModel)
         {
-            return await _usuarioServico.CadastrarUsuario(_mapper.Map<Usuario>(usuarioViewModel))!;
+            return await _usuarioServico.CadastrarUsuario(new Usuario(usuarioViewModel.Nome, usuarioViewModel.CPF, 
+                usuarioViewModel.Email, usuarioViewModel.Senha))!;
         }
     }
 }

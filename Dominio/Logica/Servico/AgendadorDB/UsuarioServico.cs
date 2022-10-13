@@ -32,7 +32,7 @@ namespace Dominio.Logica.Servico.AgendadorDB
             if (!usuario.EstaValido) return usuario;
 
             if (await _repoUsuario.Inserir(usuario))
-                usuario.AdicionarMensagemErro("Dados do usuario criados com sucesso!");
+                usuario.AdicionarMensagemSucesso("Dados do usuario criados com sucesso!");
             else
                 usuario.AdicionarMensagemErro("Falha ao criar usuario");
 

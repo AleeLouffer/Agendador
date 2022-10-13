@@ -8,7 +8,8 @@ namespace Aplicação.Logica.Mapeamentos
     {
         public UsuarioMapeamento()
         {
-            CreateMap<Usuario, CadastroUsuarioViewModel>();
+            CreateMap<Usuario, CadastroUsuarioViewModel>()
+                .ForMember(x => x.ConfirmaçãoSenha, y => y.Ignore());
         }
     }
 }

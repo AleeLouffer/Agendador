@@ -12,7 +12,8 @@ namespace InjecaoDepedencia
             services.AddDbContext<AgendadorDbContexto>(options =>
             {
                 options.UseLazyLoadingProxies();
-                options.UseSqlServer(configuration.GetConnectionString("AgendadorDB"));
+                options.UseSqlServer(configuration.GetConnectionString("AgendadorDB"), 
+                    b => b.MigrationsAssembly("API"));
             });
 
             InicializarAplicacao(services);

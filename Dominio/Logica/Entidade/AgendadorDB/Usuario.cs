@@ -6,16 +6,11 @@ namespace Dominio.Logica.Entidade.AgendadorDB
     {
         public Usuario() { }
 
-        public Usuario(string nome, string cpf, string email, string senha, string confirmacaoSenha)
+        public Usuario(string nome, string cpf, string email, string senha)
         {
             Nome = nome;
             CPF = cpf;
             Email = email;
-            if (confirmacaoSenha != senha)
-            {
-                AdicionarMensagemErro("A confirmação da senha não confere com a senha");
-                return;
-            }
             Senha = senha;
             DataDeAcesso = DateTime.Now;
             Situacao = "A";

@@ -40,9 +40,13 @@ namespace API.Controllers
         {
             try
             {
+                if (usuarioViewModel.Senha != usuarioViewModel.ConfirmaçãoSenha)
+                {
+                    return BadRequest("A Confirmação de senha não é igual a senha");
+                }
                 var usuario = await _usuarioApp.CadastrarUsuario(usuarioViewModel);
 
-                if(!usuario.EstaValido) return BadRequest(usuario.ObterMensagens());
+                if (!usuario.EstaValido) return BadRequest(usuario.ObterMensagens());
 
                 return Ok(usuario);
             }
